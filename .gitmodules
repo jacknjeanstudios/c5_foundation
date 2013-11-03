@@ -4,6 +4,3 @@
 [submodule "themes"]
 	path = themes
 	url = /Users/rjlewis/Sites/resources/package_template/themes
-[submodule "scss"]
-	path = scss
-	url = /Users/rjlewis/Sites/resources/f4_grid/scss
