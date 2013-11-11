@@ -1,11 +1,18 @@
-<?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
-<!DOCTYPE html>
+<?php 
+  defined('C5_EXECUTE') or die(_("Access Denied.")); 
+?>
 
-<!--[if IE 7]>    <html class="lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>    <html class="lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class=""> <!--<![endif]-->
+<!--[if HTML5]><![endif]-->
+<!doctype html>
+
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
+<!--[if !HTML5]>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<![endif]-->
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,6 +33,11 @@
     class="editbar" 
   <?php  }}?>
 >
+  <!--[if lt IE 8]>
+    <p class="browsehappy">
+      You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+    </p>
+<![endif]-->
   <header class="full-width container">
     
   </header>
