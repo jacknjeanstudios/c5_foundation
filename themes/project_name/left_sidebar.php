@@ -1,19 +1,19 @@
 <?php    defined('C5_EXECUTE') or die(_("Access Denied."));
 $this->inc('elements/header.php'); ?>
 
-  <section class="inner content">
-    <div class="main left_sidebar">
-      <section>
+  <section class="content-area">
+    <div class="container">
+      <section class="main left-sidebar">
         <?php 
           $a = new Area('Main'); $a->display($c); 
         ?>
       </section>
+      <aside class="sidebar left-sidebar">
+        <?php 
+          $a = new Area('Sidebar'); $a->display($c); 
+        ?>
+      </aside>
     </div>
-    <aside class="sidebar left_sidebar">
-      <?php 
-        $a = new Area('Sidebar'); $a->display($c); 
-      ?>
-    </aside>
   </section>
 
   <?php    $this->inc('elements/footer.php'); ?>

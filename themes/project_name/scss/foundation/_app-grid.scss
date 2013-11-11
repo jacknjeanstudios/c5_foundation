@@ -21,7 +21,7 @@ Contents:
           - Posts
           - Footer
       - $medium-large - 768 up
-        - style
+        - Placeholder Selectors 
         - grid
           - Header
           - Pagelist
@@ -33,27 +33,21 @@ Contents:
 
 /* @group 1st Things First */
   
-  // Placeholder Selectors
-    %row {
-      @include grid-row();
-    }
-    %full-width {
+  // Small Screen Placeholder Selectors
+    %full {
       @include grid-column(12);
     }
     %main {
-      @include grid-column(7);
-    }
-    %half-width {
-      @include grid-column(6);
+      @include grid-column(12);
     }
     %aside {
-      @include grid-column(5);
+      @include grid-column(12);
     }
     %three-panel {
-      @include grid-column(4);
+      @include grid-column(12);
     }
     %four-panel {
-      @include grid-column(3);
+      @include grid-column(6);
     }
     %pad {
       padding: 20px 0;
@@ -62,11 +56,56 @@ Contents:
 /* @group Non Query Grid */
 
 /* @end Non Query Grid */
+
+
 /* @group Media Queries */
   
   /* @group Medium-Large Layout */
     @media #{$small} { 
-   
+      // Medium - Large Screen Placeholder Selectors
+        %full {
+          @include grid-column(12);
+        }
+        %main {
+          @include grid-column(7); //determine width here
+        }
+        %aside {
+          @include grid-column(5); //determine width here
+        }
+        %three-panel {
+          @include grid-column(4);
+        }
+        %four-panel {
+          @include grid-column(3);
+        }
+        %pad {
+          padding: 20px 0;
+        }
+      // Grid 
+        .jnj {
+          .main {
+            @extend %main;
+            &.left_sidebar {
+              @extend %main;
+              @include grid-column($push:5);
+            }
+            &.sidebar-top {
+              @extend %main;
+              @include grid-column($pull:5);
+            }
+          }
+          .sidebar {
+            @extend %sidebar;
+            &.left_sidebar {
+              @extend %sidebar;
+              @include grid-column($pull:7);
+            }
+            &.sidebar-top {
+              @extend %sidebar;
+              @include grid-column($push:7);
+            }
+          }
+        }
     }
   /* @end Medium-Large Layout */
 /* @end Media Queries */
