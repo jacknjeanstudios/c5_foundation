@@ -1,0 +1,48 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// This includes all of the foundation global elements that are needed to work with any of the other files.
+@import "scss/foundation/variables";
+
+// Foundation Components
+@import
+  "scss/foundation/components/global",
+  "scss/foundation/components/grid",
+  "scss/foundation/components/visibility",
+  "scss/foundation/components/block-grid",
+  "scss/foundation/components/type",
+  "scss/foundation/components/buttons",
+  "scss/foundation/components/forms",
+  "scss/foundation/components/button-groups",
+  "scss/foundation/components/dropdown-buttons",
+  "scss/foundation/components/split-buttons",
+  "scss/foundation/components/flex-video",
+  "scss/foundation/components/section",
+  "scss/foundation/components/top-bar",
+  "scss/foundation/components/orbit",
+  "scss/foundation/components/reveal",
+  "scss/foundation/components/joyride",
+  "scss/foundation/components/clearing",
+  "scss/foundation/components/alert-boxes",
+  "scss/foundation/components/breadcrumbs",
+  "scss/foundation/components/custom-forms",
+  "scss/foundation/components/keystrokes",
+  "scss/foundation/components/labels",
+  "scss/foundation/components/inline-lists",
+  "scss/foundation/components/pagination",
+  "scss/foundation/components/panels",
+  "scss/foundation/components/pricing-tables",
+  "scss/foundation/components/progress-bars",
+  "scss/foundation/components/side-nav",
+  "scss/foundation/components/sub-nav",
+  "scss/foundation/components/switch",
+  "scss/foundation/components/magellan",
+  "scss/foundation/components/tables",
+  "scss/foundation/components/thumbs",
+  "scss/foundation/components/tooltips",
+  "scss/foundation/components/dropdown";
+
+  //import custom styles
+  @import 
+    "scss/foundation/app-grid",
+    "scss/foundation/app-styles";

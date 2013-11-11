@@ -1,0 +1,72 @@
+/*  
+================================================
+Custom Foundation4 Build by RJ Lewis
+Last updated on $date
+================================================
+Contents:
+  01  1st things first
+      - Imports
+      - Placeholder Selectors 
+  02  Non Query/ Small Grid 
+      - Header
+      - Pagelist
+      - Posts
+      - Footer
+  03  Media Queries
+      - $small and $portrait
+        - style
+        - grid
+          - Header
+          - Pagelist
+          - Posts
+          - Footer
+      - $medium-large - 768 up
+        - style
+        - grid
+          - Header
+          - Pagelist
+          - Posts
+          - Footer
+      - $retina - -webkit-min-device-pixel-ratio: 1.5
+================================================
+*/
+
+/* @group 1st Things First */
+  
+  // Placeholder Selectors
+    %row {
+      @include grid-row();
+    }
+    %full-width {
+      @include grid-column(12);
+    }
+    %main {
+      @include grid-column(7);
+    }
+    %half-width {
+      @include grid-column(6);
+    }
+    %aside {
+      @include grid-column(5);
+    }
+    %three-panel {
+      @include grid-column(4);
+    }
+    %four-panel {
+      @include grid-column(3);
+    }
+    %pad {
+      padding: 20px 0;
+    }
+/* @end 1st Things First */
+/* @group Non Query Grid */
+
+/* @end Non Query Grid */
+/* @group Media Queries */
+  
+  /* @group Medium-Large Layout */
+    @media #{$small} { 
+   
+    }
+  /* @end Medium-Large Layout */
+/* @end Media Queries */

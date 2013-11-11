@@ -1,6 +1,0 @@
-[submodule "blocks"]
-	path = blocks
-	url = /Users/rjlewis/Sites/resources/package_template/blocks
-[submodule "themes"]
-	path = themes
-	url = /Users/rjlewis/Sites/resources/package_template/themes
