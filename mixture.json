@@ -19,5 +19,5 @@
   "templateDefaultPage": "index",
   "templateDirectory": "templates",
   "type": "simple",
-  "useCompass": true
+  "useCompass": false
 }
