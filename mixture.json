@@ -6,7 +6,7 @@
   "followLeader": false,
   "lintScripts": false,
   "modelSource": null,
-  "preprocessorLocations": "themes/project_name,themes/project_name/css",
+  "preprocessorLocations": "themes/project_name",
   "preprocessorScriptOutput": "themes/project_name/js",
   "preprocessorStyleOutput": null,
   "projectDescription": "My project description",
@@ -15,9 +15,9 @@
   "serverHostname": null,
   "serverPort": null,
   "simpleModePartnerServer": "localhost:8888",
-  "templateDefaultLayout": null,
-  "templateDefaultPage": "default.php",
+  "templateDefaultLayout": "layout",
+  "templateDefaultPage": "index",
   "templateDirectory": "templates",
   "type": "simple",
-  "useCompass": false
+  "useCompass": true
 }
