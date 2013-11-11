@@ -50,13 +50,5 @@ $this->inc('elements/header.php'); ?>
       </aside>
     </div>
   </section>
-  <section class="social-links">
-    <div class="container">
-      <?php 
-        $a = new GlobalArea('Social Links'); 
-        $a->display(); 
-      ?>
-    </div>
-  </section>
 
   <?php    $this->inc('elements/footer.php'); ?>
