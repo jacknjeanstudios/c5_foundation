@@ -1,8 +1,8 @@
 <?php 
 
 defined('C5_EXECUTE') or die(_("Access Denied."));
-
-class Theme***ThemeName***Package extends Package {
+// edit theme name on lines 5, 7, 12, 16, and 23
+class Theme***ThemeName***Package extends Package { //all one 
 
   protected $pkgHandle = '***theme_name***';
   protected $appVersionRequired = '5.6.2.1';
@@ -25,10 +25,17 @@ class Theme***ThemeName***Package extends Package {
     // install Page Types
       Loader::model('collection_types');
 
-      // $ct = CollectionType::getByHandle('complex');
+      //at the very least pkg should have right sidebar type
+      $ct = CollectionType::getByHandle('right_sidebar'); 
+        if((!is_object($ct)) || ($ct->getCollectionTypeID() < 1)) {
+        $data['ctHandle'] = 'right_sidebar';
+        $data['ctName'] = t('Right Sidebar');
+        $hpt = CollectionType::add($data, $pkg);
+        }
+      // $ct = CollectionType::getByHandle('left_sidebar');
       //   if((!is_object($ct)) || ($ct->getCollectionTypeID() < 1)) {
-      //   $data['ctHandle'] = 'complex';
-      //   $data['ctName'] = t('Complex');
+      //   $data['ctHandle'] = 'left_sidebar';
+      //   $data['ctName'] = t('Left Sidebar');
       //   $hpt = CollectionType::add($data, $pkg);
       //   }
       // $ct = CollectionType::getByHandle('full');
@@ -37,10 +44,10 @@ class Theme***ThemeName***Package extends Package {
       //   $data['ctName'] = t('Full');
       //   $hpt = CollectionType::add($data, $pkg);
       //   }
-      // $ct = CollectionType::getByHandle('left_sidebar');
+      // $ct = CollectionType::getByHandle('complex');
       //   if((!is_object($ct)) || ($ct->getCollectionTypeID() < 1)) {
-      //   $data['ctHandle'] = 'left_sidebar';
-      //   $data['ctName'] = t('Left Sidebar');
+      //   $data['ctHandle'] = 'complex';
+      //   $data['ctName'] = t('Complex');
       //   $hpt = CollectionType::add($data, $pkg);
       //   }
       // $ct = CollectionType::getByHandle('left_sidebar_on_top');
@@ -49,14 +56,6 @@ class Theme***ThemeName***Package extends Package {
       //   $data['ctName'] = t('Left Sidebar on Top');
       //   $hpt = CollectionType::add($data, $pkg);
       //   }
-
-      //at the very least pkg should have right sidebar type
-      $ct = CollectionType::getByHandle('right_sidebar'); 
-        if((!is_object($ct)) || ($ct->getCollectionTypeID() < 1)) {
-        $data['ctHandle'] = 'right_sidebar';
-        $data['ctName'] = t('Right Sidebar');
-        $hpt = CollectionType::add($data, $pkg);
-        }
       // $ct = CollectionType::getByHandle('right_sidebar_on_top');
       //   if((!is_object($ct)) || ($ct->getCollectionTypeID() < 1)) {
       //   $data['ctHandle'] = 'right_sidebar_on_top';
@@ -64,23 +63,23 @@ class Theme***ThemeName***Package extends Package {
       //   $hpt = CollectionType::add($data, $pkg);
       //   }
     
-    // add an attribute set
+    // //add an attribute set
       // Loader::model('attribute/categories/collection');  
 
         // $eaku = AttributeKeyCategory::getByHandle('collection');
         // $eaku->setAllowAttributeSets(AttributeKeyCategory::ASET_ALLOW_SINGLE);
         // $blogpostSet = $eaku->addSet('blog_post',t('Blog Post'),$pkg);
 
-    // load attribute types
+    // //load attribute types
       // $bool = AttributeType::getByHandle('boolean'); //checkbox
       // $txt = AttributeType::getByHandle('text'); //text box
 
-    // check for and install blog page attributes if they have not been created
+    // //check for and install blog page attributes if they have not been created
       // if(!is_object(CollectionAttributeKey::getByHandle('is_featured'))){
       //     CollectionAttributeKey::add($bool,array('akHandle'=>'is_featured','akName'=>t('Is Featured'),'akIsSearchable'=>true,'akCheckedByDefault'=>false),$pkg)->setAttributeSet($blogpostSet);
       // }
 
-    //import social media icons
+    // // import social media icons
     // Loader::library('file/importer');
     //   $fi = new FileImporter();
     //   $fh = Loader::helper('file');
@@ -92,23 +91,23 @@ class Theme***ThemeName***Package extends Package {
     //   $newFile = $fi->import($iconPath.$file);
     // }
 
-    //import theme header image
+    // //import theme header image
     //   $pathToFile = 'packages/theme_romance/themes/romance/images/roses.jpg';
     //   $nameOfFile = 'roses.jpg';
     //     $newFile = $fi->import($pathToFile, $nameOfFile);
 
-    //import custom block(s)
+    // //import custom block(s)
       // BlockType::installBlockTypeFromPackage('**block_handle**', $pkg);
-      // Update any existing installation
-        // public function upgrade() {
-        //   parent::upgrade();
-         
-        //   // add another block type
-        //   $bt = BlockType::getByHandle('top_content_img_shadow');
-        //   if (!is_object($bt)) {
-        //     BlockType::installBlockTypeFromPackage('top_content_img_shadow', $this); 
-        //   }
-        // }
   }
+  // // Update any existing installation
+  //   public function upgrade() {
+  //     parent::upgrade();  
+           
+  //     // add another block type
+  //     $bt = BlockType::getByHandle('top_content_img_shadow');
+  //     if (!is_object($bt)) {
+  //       BlockType::installBlockTypeFromPackage('top_content_img_shadow', $this); 
+  //     }
+  //   }
 }
 ?>

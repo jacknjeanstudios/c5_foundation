@@ -18,20 +18,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel='stylesheet' href='<?=$this->getThemePath()?>/css/normalize.css'>
-  <link rel='stylesheet' href='<?=$this->getThemePath()?>/style.css'>
+  <link rel='stylesheet' href='<?=$this->getThemePath()?>/styles.css'>
   <link rel='stylesheet' href='<?=$this->getStyleSheet('typography.css')?>'>
-  <script src='<?=$this->getThemePath()?>/js/vendor/custom.modernizr.js'></script>
+  <script src='<?=$this->getThemePath()?>/js/custom.modernizr.js'></script>
   
   <?php Loader::element('header_required');?>
   
 </head>
 
-<body 
+  <body
   <?php if ($c->isEditMode()) { ?>
-  class="editmode" 
-  <?php  } else { $u = new User(); if ($u->isLoggedIn()) { ?> 
-    class="editbar" 
-  <?php  }}?>
+  class="jnj editmode"
+  <?php  } else { $u = new User(); if ($u->isLoggedIn()) { ?>
+    class="jnj editbar"
+  <?php  } else {  ?>
+    class="jnj"
+  <?php  }} ?>
 >
   <!--[if lt IE 8]>
     <p class="browsehappy">
